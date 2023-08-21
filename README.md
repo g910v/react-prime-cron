@@ -4,12 +4,7 @@
 
 [![MIT License Badge](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/g910v/react-prime-cron/blob/master/LICENSE.md)
 
-## Inspired by
-
-- [jqCron](https://github.com/arnapou/jqcron)
-- [cron-converter](https://github.com/roccivic/cron-converter)
-
-## Forked 
+# Forked 
 [react-js-cron](https://github.com/xrutayisire/react-js-cron)
 
 ## TypeScript
