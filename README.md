@@ -1,60 +1,41 @@
 ## ReactJS Cron
 
-> A React cron editor built with [antd](https://github.com/ant-design/ant-design)
+> A React cron editor built with [primereact](https://github.com/primefaces/primereact)
 
-[![npm package](https://img.shields.io/npm/v/react-js-cron/latest.svg)](https://www.npmjs.com/package/react-js-cron)
-[![MIT License Badge](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/xrutayisire/react-js-cron/blob/master/LICENSE.md)
-
-[![Build](https://github.com/xrutayisire/react-js-cron/actions/workflows/build.yml/badge.svg)](https://github.com/xrutayisire/react-js-cron/actions/workflows/build.yml)
-[![Lint](https://github.com/xrutayisire/react-js-cron/actions/workflows/lint.yml/badge.svg)](https://github.com/xrutayisire/react-js-cron/actions/workflows/lint.yml)
-[![Unit tests](https://github.com/xrutayisire/react-js-cron/actions/workflows/test.yml/badge.svg)](https://github.com/xrutayisire/react-js-cron/actions/workflows/test.yml)
-[![codecov](https://codecov.io/gh/xrutayisire/react-js-cron/branch/master/graph/badge.svg?token=H4I8REN489)](https://codecov.io/gh/xrutayisire/react-js-cron)
-
-Live **demo** and **usage** at [https://xrutayisire.github.io/react-js-cron/](https://xrutayisire.github.io/react-js-cron/?path=/docs/reactjs-cron--demo)
-
-![react-js-cron example](https://raw.githubusercontent.com/xrutayisire/react-js-cron/master/react-js-cron-example.png)
-
-## Features
-
-- Zero dependencies except React and antd
-- Supports all standard cron expressions
-- Supports cron names for months and week days
-- Supports cron shortcuts
-- Supports "7" for Sunday
-- Supports two-way sync binding with input
-- Supports locale customization
-- Supports multiple selection by double-clicking on an option
-- And many more (disabled, read-only, 12-hour clock...)
+[![MIT License Badge](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/g910v/react-prime-cron/blob/master/LICENSE.md)
 
 ## Inspired by
 
 - [jqCron](https://github.com/arnapou/jqcron)
 - [cron-converter](https://github.com/roccivic/cron-converter)
 
+## Forked 
+[react-js-cron](https://github.com/xrutayisire/react-js-cron)
+
 ## TypeScript
 
-react-js-cron is written in TypeScript with complete definitions
+react-prime-cron is written in TypeScript with complete definitions
 
 ## Installation
 
 Be sure that you have these dependencies on your project:
 
 - react (>=17.0.0)
-- antd (>=5.5.0)
+- primereact (>=8.3.0)
 
 ```bash
 # NPM
-npm install react-js-cron
+npm install react-prime-cron
 
 # Yarn
-yarn add react-js-cron
+yarn add react-prime-cron
 ```
 
 ## Usage
 
 ```jsx
-import { Cron } from 'react-js-cron'
-import 'react-js-cron/dist/styles.css'
+import { Cron } from 'react-prime-cron'
+import 'react-prime-cron/dist/styles.css'
 
 export function App() {
   const [value, setValue] = useState('30 5 * * 1,6')
@@ -66,7 +47,7 @@ export function App() {
 Don't forget to import styles manually:
 
 ```jsx
-import 'react-js-cron/dist/styles.css'
+import 'react-prime-cron/dist/styles.css'
 ```
 
 ## Converter
@@ -74,7 +55,7 @@ import 'react-js-cron/dist/styles.css'
 If you want to use the converter used internally you can import it in your project:
 
 ```jsx
-import { converter } from 'react-js-cron'
+import { converter } from 'react-prime-cron'
 
 const cronString = converter.getCronStringFromValues(
   'day', // period: 'year' | 'month' | 'week' | 'day' | 'hour' | 'minute' | 'reboot'
@@ -92,30 +73,6 @@ console.log('cron string:', converted)
 ```
 cron string: '1 2 * * *'
 ```
-
-## Examples
-
-Learn more with [dynamic settings](https://xrutayisire.github.io/react-js-cron/?path=/story/reactjs-cron--dynamic-settings).
-
-- [Two-way sync binding with input](https://xrutayisire.github.io/react-js-cron/?path=/story/reactjs-cron--input)
-- [Default value](https://xrutayisire.github.io/react-js-cron/?path=/story/reactjs-cron--default-value)
-- [Default period](https://xrutayisire.github.io/react-js-cron/?path=/story/reactjs-cron--default-period)
-- [Disabled mode](https://xrutayisire.github.io/react-js-cron/?path=/story/reactjs-cron--disabled)
-- [Read-Only mode](https://xrutayisire.github.io/react-js-cron/?path=/story/reactjs-cron--read-only)
-- [Humanized labels](https://xrutayisire.github.io/react-js-cron/?path=/story/reactjs-cron--humanize-labels)
-- [Humanized value](https://xrutayisire.github.io/react-js-cron/?path=/story/reactjs-cron--humanize-value)
-- [Leading zero for numbers](https://xrutayisire.github.io/react-js-cron/?path=/story/reactjs-cron--leading-zero)
-- [Error management with text and style](https://xrutayisire.github.io/react-js-cron/?path=/story/reactjs-cron--track-error)
-- ["Clear button" removal](https://xrutayisire.github.io/react-js-cron/?path=/story/reactjs-cron--no-clear-button)
-- ["Clear button" action](https://xrutayisire.github.io/react-js-cron/?path=/story/reactjs-cron--clear-button-empty-value)
-- [Empty value management](https://xrutayisire.github.io/react-js-cron/?path=/story/reactjs-cron--empty-never-allowed)
-- [Cron shortcuts](https://xrutayisire.github.io/react-js-cron/?path=/story/reactjs-cron--shortcuts)
-- [12-hour clock](https://xrutayisire.github.io/react-js-cron/?path=/story/reactjs-cron--twelve-hour-clock)
-- [24-hour clock](https://xrutayisire.github.io/react-js-cron/?path=/story/reactjs-cron--twenty-four-hour-clock)
-- [Locale customization](https://xrutayisire.github.io/react-js-cron/?path=/story/reactjs-cron--french-locale)
-- [Prefix and suffix removal](https://xrutayisire.github.io/react-js-cron/?path=/story/reactjs-cron--no-prefix-and-suffix)
-- [Style customization](https://xrutayisire.github.io/react-js-cron/?path=/story/reactjs-cron--custom-style)
-- And many more...
 
 ## API
 
@@ -237,7 +194,7 @@ CronProps {
   /**
    * Display error style (red border and background).
    *
-   * Display: true
+   * Default: true
    */
   displayError?: boolean
 
@@ -478,4 +435,4 @@ CronProps {
 
 ## License
 
-MIT © [xrutayisire](https://github.com/xrutayisire)
+MIT © [Victoria Gniteeva](https://github.com/g910v)

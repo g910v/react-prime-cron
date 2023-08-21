@@ -1,8 +1,8 @@
 {
-  "name": "react-js-cron",
-  "version": "4.1.0",
-  "description": "A React cron editor with antd inspired by jqCron",
-  "author": "Xavier Rutayisire <xavier.rutayisire@gmail.com> (https://github.com/xrutayisire/)",
+  "name": "react-prime-cron",
+  "version": "1.0.0",
+  "description": "A React cron editor with PrimeReact a forked repo from Xavier Rutayisire (https://github.com/xrutayisire/react-js-cron)",
+  "author": "Victoria Gniteeva (https://github.com/g910v)",
   "license": "MIT",
   "keywords": [
     "react",
@@ -13,19 +13,19 @@
     "editor",
     "widget",
     "generator",
-    "antd",
-    "ant-design",
+    "prime",
+    "primereact",
     "cronjob",
     "schedule",
     "parser"
   ],
-  "homepage": "https://github.com/xrutayisire/react-js-cron#readme",
+  "homepage": "https://github.com/g910v/react-prime-cron#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xrutayisire/react-js-cron.git"
+    "url": "git+https://github.com/g910v/react-prime-cron.git"
   },
   "bugs": {
-    "url": "https://github.com/xrutayisire/react-js-cron/issues"
+    "url": "https://github.com/g910v/react-prime-cron/issues"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
