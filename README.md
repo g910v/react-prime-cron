@@ -15,7 +15,6 @@ react-prime-cron is written in TypeScript with complete definitions
 
 ## Installation
 
-
 Be sure that you have these dependencies on your project:
 
 - react (>=17.0.0)
