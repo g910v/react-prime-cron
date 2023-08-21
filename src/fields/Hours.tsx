@@ -16,7 +16,6 @@ export default function Hours(props: HoursProps) {
     readOnly,
     leadingZero,
     clockFormat,
-    period,
     periodicityOnDoubleClick,
     mode,
     allowClear,
@@ -50,7 +49,6 @@ export default function Hours(props: HoursProps) {
         readOnly={readOnly}
         leadingZero={leadingZero}
         clockFormat={clockFormat}
-        period={period}
         periodicityOnDoubleClick={periodicityOnDoubleClick}
         mode={mode}
         allowClear={allowClear}

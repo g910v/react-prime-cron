@@ -1,6 +1,6 @@
-import { Select } from 'antd'
-import { BaseOptionType } from 'antd/es/select'
-import React, { useCallback, useMemo } from 'react'
+import { Dropdown } from 'primereact/dropdown'
+import { useCallback, useMemo } from 'react'
+import { SelectItemOptionsType } from 'primereact/selectitem'
 
 import { DEFAULT_LOCALE_EN } from '../locale'
 import { PeriodProps, PeriodType } from '../types'
@@ -18,7 +18,7 @@ export default function Period(props: PeriodProps) {
     allowedPeriods,
     allowClear,
   } = props
-  const options: BaseOptionType[] = []
+  const options: SelectItemOptionsType = []
 
   if (allowedPeriods.includes('year')) {
     options.push({
@@ -103,36 +103,22 @@ export default function Period(props: PeriodProps) {
     [className, locale.prefixPeriod]
   )
 
-  const popupClassName = useMemo(
-    () =>
-      classNames({
-        'react-js-cron-select-dropdown': true,
-        'react-js-cron-select-dropdown-period': true,
-        [`${className}-select-dropdown`]: !!className,
-        [`${className}-select-dropdown-period`]: !!className,
-      }),
-    [className]
-  )
-
   return (
     <div className={internalClassName}>
       {locale.prefixPeriod !== '' && (
         <span>{locale.prefixPeriod || DEFAULT_LOCALE_EN.prefixPeriod}</span>
       )}
-
-      <Select<PeriodType, BaseOptionType>
+      <Dropdown
         key={JSON.stringify(locale)}
         defaultValue={value}
         value={value}
-        onChange={handleChange}
+        onChange={(e) => handleChange(e.value)}
         options={options}
-        className={selectClassName}
-        popupClassName={popupClassName}
         disabled={disabled}
-        showArrow={!readOnly}
-        open={readOnly ? false : undefined}
+        dropdownIcon={(disabled || readOnly) ? 'pi' : undefined}
         data-testid='select-period'
-        allowClear={allowClear}
+        showClear={allowClear}
+        className={selectClassName}
       />
     </div>
   )

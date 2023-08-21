@@ -64,7 +64,6 @@ export default function Minutes(props: MinutesProps) {
         readOnly={readOnly}
         leadingZero={leadingZero}
         clockFormat={clockFormat}
-        period={period}
         periodicityOnDoubleClick={periodicityOnDoubleClick}
         mode={mode}
         allowClear={allowClear}

@@ -82,7 +82,6 @@ export default function WeekDays(props: WeekDaysProps) {
       <CustomSelect
         placeholder={placeholder}
         optionsList={optionsList}
-        grid={false}
         value={value}
         unit={{
           ...UNITS[4],
@@ -96,7 +95,6 @@ export default function WeekDays(props: WeekDaysProps) {
         humanizeLabels={humanizeLabels}
         disabled={disabled}
         readOnly={readOnly}
-        period={period}
         periodicityOnDoubleClick={periodicityOnDoubleClick}
         mode={mode}
         allowClear={allowClear}

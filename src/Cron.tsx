@@ -1,4 +1,4 @@
-import { Button } from 'antd'
+import { Button } from 'primereact/button'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { getCronStringFromValues, setValuesFromCronString } from './converter'
@@ -252,8 +252,7 @@ export default function Cron(props: CronProps) {
         return (
           <Button
             className={clearButtonClassName}
-            danger
-            type='primary'
+            severity="danger"
             disabled={disabled}
             {...otherClearButtonProps}
             onClick={handleClear}
