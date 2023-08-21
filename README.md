@@ -2,9 +2,10 @@
 
 > A React cron editor built with [primereact](https://github.com/primefaces/primereact)
 
+[![npm package](https://img.shields.io/npm/v/react-prime-cron.svg)](https://www.npmjs.com/package/react-prime-cron)
 [![MIT License Badge](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/g910v/react-prime-cron/blob/master/LICENSE.md)
 
-### Forked 
+## Forked 
 
 [react-js-cron](https://github.com/xrutayisire/react-js-cron)
 
