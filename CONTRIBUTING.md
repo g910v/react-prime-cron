@@ -1,6 +1,6 @@
-# Contributing to ReactJS Cron
+# Contributing to React Prime Cron
 
-Want to contribute to ReactJS Cron? There are a few things you need to know.
+Want to contribute to ReactPrime Cron? There are a few things you need to know.
 
 ## Install
 
