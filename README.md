@@ -1,4 +1,4 @@
-## ReactJS Cron
+## React Prime Cron
 
 > A React cron editor built with [primereact](https://github.com/primefaces/primereact)
 
