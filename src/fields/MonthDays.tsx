@@ -16,7 +16,6 @@ export default function MonthDays(props: MonthDaysProps) {
     disabled,
     readOnly,
     leadingZero,
-    period,
     periodicityOnDoubleClick,
     mode,
     allowClear,
@@ -72,7 +71,6 @@ export default function MonthDays(props: MonthDaysProps) {
         disabled={disabled}
         readOnly={readOnly}
         leadingZero={leadingZero}
-        period={period}
         periodicityOnDoubleClick={periodicityOnDoubleClick}
         mode={mode}
         allowClear={allowClear}

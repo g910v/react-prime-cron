@@ -1,5 +1,6 @@
-import { ButtonProps, SelectProps } from 'antd'
-import { Dispatch, SetStateAction } from 'react'
+import { ButtonProps } from 'primereact/button'
+import { MultiSelectProps } from 'primereact/multiselect'
+import React, { Dispatch, SetStateAction } from 'react'
 
 // External props
 
@@ -104,7 +105,7 @@ export interface CronProps {
   clearButton?: boolean
 
   /**
-   * antd button props to customize the clear button.
+   * primereact button props to customize the clear button.
    */
   clearButtonProps?: ClearButtonProps
 
@@ -118,7 +119,7 @@ export interface CronProps {
   /**
    * Display error style (red border and background).
    *
-   * Display: true
+   * Default: true
    */
   displayError?: boolean
 
@@ -268,16 +269,16 @@ export interface SetValueFunctionExtra {
 export type SetValue = SetValueFunction | Dispatch<SetStateAction<string>>
 export type CronError =
   | {
-      type: 'invalid_cron'
-      description: string
-    }
+    type: 'invalid_cron'
+    description: string
+  }
   | undefined
 export type OnErrorFunction = (error: CronError) => void
 export type OnError =
   | OnErrorFunction
   | Dispatch<SetStateAction<CronError>>
   | undefined
-export interface ClearButtonProps extends Omit<ButtonProps, 'onClick'> {}
+export interface ClearButtonProps extends Omit<ButtonProps, 'onClick'> { }
 export type ClearButtonAction = 'empty' | 'fill-with-every'
 export type PeriodType =
   | 'year'
@@ -380,24 +381,24 @@ export interface MinutesProps extends FieldProps {
 }
 export interface CustomSelectProps
   extends Omit<
-    SelectProps<any>,
-    | 'mode'
-    | 'tokenSeparators'
-    | 'virtual'
+    MultiSelectProps,
     | 'onClick'
     | 'onBlur'
-    | 'tagRender'
     | 'dropdownRender'
-    | 'showSearch'
-    | 'showArrow'
     | 'onChange'
-    | 'dropdownMatchSelectWidth'
     | 'options'
-    | 'onSelect'
-    | 'onDeselect'
+    | 'dropdownIcon'
+    | 'filterIcon'
+    | 'filterMatchMode'
+    | 'showSelectAll'
     | 'filterOption'
+    | 'emptyFilterMessage'
+    | 'filterTemplate'
+    | 'panelFooterTemplate'
+    | 'pt'
+    | 'showClear'
   > {
-  grid?: boolean
+  allowClear?: boolean,
   setValue: SetValueNumbersOrUndefined
   optionsList?: string[]
   locale: Locale
@@ -407,11 +408,11 @@ export interface CustomSelectProps
   readOnly: boolean
   leadingZero?: LeadingZero
   clockFormat?: ClockFormat
-  period: PeriodType
   unit: Unit
   periodicityOnDoubleClick: boolean
   mode: Mode
   filterOption?: FilterOption
+  panelFooterTemplate?: React.ReactNode
 }
 export type SetValueNumbersOrUndefined = Dispatch<
   SetStateAction<number[] | undefined>

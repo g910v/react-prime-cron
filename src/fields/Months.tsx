@@ -15,7 +15,6 @@ export default function Months(props: MonthsProps) {
     humanizeLabels,
     disabled,
     readOnly,
-    period,
     periodicityOnDoubleClick,
     mode,
     allowClear,
@@ -43,7 +42,6 @@ export default function Months(props: MonthsProps) {
       <CustomSelect
         placeholder={locale.emptyMonths || DEFAULT_LOCALE_EN.emptyMonths}
         optionsList={optionsList}
-        grid={false}
         value={value}
         unit={{
           ...UNITS[3],
@@ -57,7 +55,6 @@ export default function Months(props: MonthsProps) {
         humanizeLabels={humanizeLabels}
         disabled={disabled}
         readOnly={readOnly}
-        period={period}
         periodicityOnDoubleClick={periodicityOnDoubleClick}
         mode={mode}
         allowClear={allowClear}
