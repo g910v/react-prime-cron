@@ -8,13 +8,6 @@ This repository use yarn package manager, to install the dependencies run:
 
 `yarn`
 
-## Storybook
-
-A storybook is available to check your changes.
-To dev with Storybook run:
-
-`yarn storybook`
-
 ## Build
 
 To check the package output run:

@@ -42,8 +42,6 @@
     "build:rollup": "rollup -c",
     "build:del": "del dist",
     "dev": "rollup -c -w",
-    "storybook": "start-storybook -p 9009",
-    "build-storybook": "build-storybook -o docs",
     "lint": "eslint 'src/**/*.ts?(x)'",
     "lint:fix": "yarn lint --fix",
     "prettier": "prettier --check 'src/**/*.{ts?(x),css}'",
@@ -73,15 +71,6 @@
     "@rollup/plugin-node-resolve": "15.0.1",
     "@rollup/plugin-terser": "0.1.0",
     "@rollup/plugin-typescript": "10.0.1",
-    "@storybook/addon-actions": "6.5.13",
-    "@storybook/addon-docs": "6.5.13",
-    "@storybook/addon-essentials": "6.5.13",
-    "@storybook/addon-interactions": "6.5.13",
-    "@storybook/addon-links": "6.5.13",
-    "@storybook/builder-webpack5": "6.5.13",
-    "@storybook/manager-webpack5": "6.5.13",
-    "@storybook/react": "6.5.13",
-    "@storybook/testing-library": "0.0.13",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "13.4.0",
     "@testing-library/react-hooks": "8.0.1",
@@ -116,8 +105,7 @@
     "collectCoverageFrom": [
       "src/**",
       "!src/types.ts",
-      "!src/index.ts",
-      "!src/stories/**"
+      "!src/index.ts"
     ],
     "coverageReporters": [
       "lcov",
