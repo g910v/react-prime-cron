@@ -179,7 +179,7 @@ export default function CustomSelect(props: CustomSelectProps) {
   }, [setValue, readOnly]);
 
   const clicksRef = useRef<Clicks[]>([]);
-  const onOptionClick = useCallback(
+  const onSelectValue = useCallback(
     (newValueOption: string | undefined) => {
       if (!newValueOption) {
         onClear();
@@ -228,6 +228,20 @@ export default function CustomSelect(props: CustomSelectProps) {
     [clicksRef, simpleClick, doubleClick, readOnly, periodicityOnDoubleClick, onClear],
   );
 
+  const onOptionClick = (selectedValues: string[]) => {
+    if (!value?.length) {
+      onSelectValue(selectedValues[0]);
+      return;
+    }
+    if (selectedValues.length > value?.length) {
+      onSelectValue(selectedValues[selectedValues.length - 1])
+    } else {
+      const numberValues = selectedValues.map(i => Number(i));
+      const newValue = value.filter(i => !numberValues.includes(i))
+      onSelectValue(String(newValue[0]))
+    }
+  }
+
   const internalClassName = useMemo(
     () =>
       classNames({
@@ -245,7 +259,7 @@ export default function CustomSelect(props: CustomSelectProps) {
           <Dropdown
             showClear={allowClear ?? !readOnly}
             value={stringValueSingleMode}
-            onChange={(e) => onOptionClick(e.value)}
+            onChange={(e) => onSelectValue(e.value)}
             options={options}
             placeholder={placeholder as string}
             dropdownIcon={(disabled || readOnly) ? 'pi' : undefined}
@@ -259,7 +273,7 @@ export default function CustomSelect(props: CustomSelectProps) {
           <MultiSelect
             showClear={allowClear ?? !readOnly}
             value={stringValue}
-            onChange={(e) => onOptionClick(e.selectedOption?.value)}
+            onChange={(e) => onOptionClick(e.value)}
             showSelectAll={false}
             panelHeaderTemplate={panelHeaderTemplate}
             selectedItemTemplate={renderTag}
