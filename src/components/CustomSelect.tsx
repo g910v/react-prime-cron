@@ -181,11 +181,6 @@ export default function CustomSelect(props: CustomSelectProps) {
   const clicksRef = useRef<Clicks[]>([]);
   const onSelectValue = useCallback(
     (newValueOption: string | undefined) => {
-      if (!newValueOption) {
-        onClear();
-        return;
-      }
-
       if (!readOnly) {
         const doubleClickTimeout = 300;
         const clicks = clicksRef.current;
@@ -225,10 +220,14 @@ export default function CustomSelect(props: CustomSelectProps) {
         };
       }
     },
-    [clicksRef, simpleClick, doubleClick, readOnly, periodicityOnDoubleClick, onClear],
+    [clicksRef, simpleClick, doubleClick, readOnly, periodicityOnDoubleClick],
   );
 
-  const onOptionClick = (selectedValues: string[]) => {
+  const onOptionClick = useCallback((selectedValues: string[]) => {
+    if (!selectedValues?.length) {
+      onClear();
+      return;
+    }
     if (!value?.length) {
       onSelectValue(selectedValues[0]);
       return;
@@ -240,7 +239,7 @@ export default function CustomSelect(props: CustomSelectProps) {
       const newValue = value.filter(i => !numberValues.includes(i))
       onSelectValue(String(newValue[0]))
     }
-  }
+  }, [onClear, onSelectValue, value]);
 
   const internalClassName = useMemo(
     () =>

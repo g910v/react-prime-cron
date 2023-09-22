@@ -1,6 +1,6 @@
 {
   "name": "react-prime-cron",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A React cron editor with PrimeReact a forked repo from Xavier Rutayisire (https://github.com/xrutayisire/react-js-cron)",
   "author": "Victoria Gniteeva (https://github.com/g910v)",
   "license": "MIT",
